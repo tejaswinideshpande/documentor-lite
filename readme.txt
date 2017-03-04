@@ -1,10 +1,10 @@
 === Documentor - Create Product Documentation ===
-Contributors: internet techies, webfanzine
+Contributors: internet techies, tejaswini
 Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc, color options, colored menu, doc, docs, documentation, documents, easy, FAQ, FAQs, knowledge, knowledge base, menu, notes, order, organize, page, plugin, plugins, Post, quoble, simple, text, text document, word, wordpress, WordPress Plugin
 Requires at least: 3.6
-Tested up to: 4.5.3
-Stable tag: 1.3.1
+Tested up to: 4.7.2
+Stable tag: 1.5
 License: GPLv2 or later
 
 Great Products need Great Documentation!! Easily create Online Product Guide or Help Document.
@@ -81,6 +81,30 @@ There's 3 ways to install this plugin:
 Please check the plugin page for FAQs and how-tos
 
 == Changelog ==
+
+= 1.5 =
+
+* New: Print guide option
+* New: Visitors can submit feedback
+* Fix: jQuery should be loaded in head
+* Fix: .close and .open class on admin panel should be renamed so as to avoid conflict with other plugins and themes
+* Fix: The 'Save' button should be inactive once clicked and the process is ongoing in the backend
+* Changed the location of Edit
+* Reduced the width of Search Box
+* Fix for Broad skin : Inter sections links were not working
+* Fix : Inline section editor view and tags
+* Fix : Guide Name input box should be smaller and Save Name should appear as a link.
+* Modification : On Add Section window, no need to have Edit and Back to Edit both. Remove the Edit button and keep only Back to Edit and that should appear beside Insert with different color (gray will be good)
+* Fix : The responsiveness of the edit window and even complete dashboard
+* New : Use loader when click on "Posts" or Link" or whenever it takes time
+* Modification : Search box should be ON by default
+* Fix : Section title should be the Post Title for sections - i.e. if Section Title is changed the Post Title should also change [Removed Post Title completely from Edit Section]
+* Fix : On Edit Section or Add Section - instead of 'documentor-sections', the label for the Post Type should be shown
+* New : Search - If no results is found, display message
+* New : Search - The searched keywords are highlighted in the guide
+* New : Search - The loader is displayed while the guide search is in progress
+* New : Search bar and extras - displayed when guide shortcode for a guide which does not exists is embedded
+* Modification : Change sequence of Guide Settings on Edit Guide panel
 
 = 1.3 =
 

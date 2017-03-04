@@ -397,6 +397,7 @@ class DocumentorLiteAPI extends DocumentorLiteGuide {
 				$sections[$idx][ 'sec_id' ] = $section_data->sec_id;
 				$sections[$idx][ 'postid' ] = $section_data->postid;
 				$sections[$idx][ 'type' ] = $section_data->type;
+				$sections[$idx][ 'post_type' ] = $section_data->post_type;
 				
 				$sections[$idx][ 'upvote' ] = $section_data->upvote;
 				$sections[$idx][ 'downvote' ] = $section_data->downvote;
@@ -672,7 +673,7 @@ class DocumentorLiteAPI extends DocumentorLiteGuide {
 			
 			//Edit Section link at the front end
 			$edtlink='';
-			if( post_type_exists($type) ) { 
+			if( post_type_exists($post_type) ) { 
 				if ( is_user_logged_in() && current_user_can('edit_post', $postid)) {
 					$edtlink = get_edit_post_link($postid);
 					$edtlink = '<span class="doc-postedit-link"><a href="'.esc_url($edtlink).'" target="_blank">'. __('Edit','documentor-lite').'</a></span>';

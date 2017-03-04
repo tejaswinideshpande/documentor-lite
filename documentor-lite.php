@@ -4,7 +4,7 @@ Plugin URI: http://documentor.in/
 Description: Best plugin to create online documentation or product guide on WordPress.
 Text Domain: documentor-lite
 Version: 1.5
-Author: WebFanzine Media, Tejaswini Deshpande
+Author: Tejaswini Deshpande
 Author URI: http://tejaswinideshpande.com/
 Wordpress version supported: 3.6 and above
 License: GPLv2 or later
