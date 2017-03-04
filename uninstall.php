@@ -7,7 +7,7 @@ delete_option('documentorlite_db_version');
 delete_option('documentor_global_options');
 global $wpdb, $table_prefix;
 
-$documentor_table = $table_prefix.'documentor-lite';
+$documentor_table = $table_prefix.'documentor';
 $feedback_table = $table_prefix.'documentor_feedback';
 $sections_table = $table_prefix.'documentor_sections';
 $sql = "DROP TABLE $documentor_table;";
