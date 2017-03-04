@@ -40,9 +40,11 @@ class DocumentorLiteGuide{
 				}
 				else { //if guide post type did not get created properly for this particular guide
 					$guide = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM ".$table_prefix.DOCUMENTORLITE_TABLE." WHERE doc_id = %d", $this->docid ) );
-					if( count($guide) > 0 ) {
+					if( count($guide) > 0 and ( !isset($guide->post_id) or $guide->post_id=='0' or (FALSE === get_post_status( $guide->post_id )) ) ) {
 						$default_documentor_settings = documentor_lite_default_settings();
-						$created_on=(isset($guide->created_on)?($guide->created_on):(date('Y-m-d H:i:s', strtotime("now"))));
+						$created_on=date('Y-m-d H:i:s', strtotime("now"));
+						$guide->doc_title='Documentor Guide';
+						$guide->sections_order='';
 						$post= array(
 							'post_title'=>$guide->doc_title,
 							'post_type'=>'guide',
@@ -177,21 +179,21 @@ class DocumentorLiteGuide{
 			return $htmlnm;
 		}
 		//get ip address of user
-		function getRealIpAddr()
-		{
-			if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
+		function getRealIpAddr(){
+			foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key)
 			{
-				$ip=$_SERVER['HTTP_CLIENT_IP'];
+				if (array_key_exists($key, $_SERVER) === true)
+				{
+					foreach (array_map('trim', explode(',', $_SERVER[$key])) as $ip)
+					{
+						if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false)
+						{
+							return $ip;
+						}
+					}
+				}
 			}
-			elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))   //to check ip is pass from proxy
-			{
-				$ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-			}
-			else
-			{
-				$ip=$_SERVER['REMOTE_ADDR'];
-			}
-			return $ip;
+			return '';
 		}
 		//create guide
 		function create() {
@@ -338,7 +340,7 @@ class DocumentorLiteGuide{
 						if( ( $secdata->type != 3 ) && current_user_can('edit_post', $postid) ) {  
 							$edtlink = get_edit_post_link($postid);
 							$html .= '<a href="'.$edtlink.'" target="_blank" class="section-editlink">'. __('Edit','documentor-lite').'</a>';
-							$html .= '<a href="'.$edtlink.'#commentsdiv" target="_blank" class="section-commentslink">'. __('Comments/Suggestion','documentor-lite').'</a>';
+							$html .= '<a href="'.$edtlink.'#commentsdiv" target="_blank" class="section-commentslink">'. __('Comments/Feedback','documentor-lite').'</a>';
 						}
 					}
 					$html .= '<div class="sections-div">

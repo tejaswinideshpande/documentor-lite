@@ -113,7 +113,7 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 			</table>
 		<?php }
 		function documentor_admin_resources() {
-			if ( isset($_GET['page']) && ( $_GET['page'] == 'documentor-admin' || $_GET['page'] == 'documentor-global-settings' || $_GET['page'] == 'documentor-new' ) ) {
+			if ( isset($_GET['page']) && ( $_GET['page'] == 'documentor-admin' || $_GET['page'] == 'documentor-global-settings' ) ) {
 				wp_register_script('jquery', false, false, false, false);
 				wp_enqueue_script( 'jquery-ui-tabs' );
 				wp_enqueue_script( 'jquery-ui-core' );
@@ -122,9 +122,6 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 				wp_enqueue_script( 'jquery-nestable', DocumentorLite::documentor_plugin_url( 'core/js/jquery.nestable.js' ), array('jquery'), DOCUMENTORLITE_VER, false);
 				wp_enqueue_style( 'wp-color-picker' );
 				wp_enqueue_script( 'wp-color-picker' );
-				wp_enqueue_style( 'dataTableCSS', DocumentorLite::documentor_plugin_url( 'core/css/jquery.dataTables.min.css' ), false, DOCUMENTORLITE_VER, 'all');
-				
-				wp_enqueue_script( 'dataTableJS', DocumentorLite::documentor_plugin_url( 'core/js/jquery.dataTables.min.js' ),	array('jquery'), DOCUMENTORLITE_VER, false);
 				
 				wp_enqueue_style( 'quicksand-font', 'https://fonts.googleapis.com/css?family=Play', false, DOCUMENTORLITE_VER, 'all' );
 				

@@ -569,29 +569,6 @@ input.cmn-toggle-round:checked + label:after {
 	line-height: 2em;
 	float : left;
 }
-/* data table at manage guide */
-.documentor-import {
-	display: none;
-	top: 100px !important;
-	background-color: #eee;
-	line-height: 30px;
-	width: 500px;
-	height: auto;
-	padding: 50px 10px 10px 10px;
-	text-align: center;
-}
-table.dataTable tr.even { 
-	background-color: #ffffff; 
-}
-table.dataTable tr.odd { 
-	background-color: #f9f9f9; 
-}
-table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td	{
-	border-color: #bbb;
-}
-.dataTables_filter {
-	margin: 10px;
-}
 label.titles{
 	display:block;
 	margin-bottom:5px;
@@ -624,18 +601,7 @@ textarea.txts{
 }
 .doc-form-row {
 	padding: 10px 20px 10px 20px;
-	/*font-size: 14px;
-	color: #222222;
-	min-height: 30px;
-	width: 90%;
-	clear: left;
-	font-family: "Century Gothic", "Avant Garde", "Trebuchet MS", sans-serif;*/
 }
-/*
-.doc-form-input {
-	float: left;
-	max-width: 300px;
-}*/
 /* Add sections panel */
 .doc-pdf-msg, .docsec-pdf-msg {
 	color: #38761D;

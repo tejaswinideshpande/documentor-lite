@@ -237,7 +237,7 @@ class DocumentorLite{
 			'hierarchical' 		=> false,
 			'menu_position' 	=> null,
 			'can_export' 		=> true,
-			'supports' 			=> array('editor','thumbnail','excerpt','custom-fields')
+			'supports' 			=> array('editor','thumbnail','excerpt','custom-fields', 'comments')
 		); 
 		register_post_type('documentor-sections',$args);
 	} 
