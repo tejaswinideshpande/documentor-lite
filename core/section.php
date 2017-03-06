@@ -119,14 +119,12 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 								'post_id' 	=> $post_id,
 								'type'		=> $type,
 								'upvote'	=> 0,
-								'downvote'	=> 0,
-								'pdf_id'	=> 0
+								'downvote'	=> 0
 							), 
 							array( 
 								'%d',
 								'%d', 
 								'%s',
-								'%d',
 								'%d',
 								'%d'
 							) 
@@ -190,14 +188,12 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 							'post_id' 	=> $post_id,
 							'type'		=> $type,
 							'upvote'	=> 0,
-							'downvote'	=> 0,
-							'pdf_id'	=> 0
+							'downvote'	=> 0
 						), 
 						array( 
 							'%d',
 							'%d', 
 							'%s',
-							'%d',
 							'%d',
 							'%d'
 						) 
@@ -287,33 +283,6 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 						);
 					wp_update_post( $post );
 				}
-				/*//update slug in sections table
-				$secobj = new DocumentorLiteSection();
-				//check for duplicate slug if present make it unique 
-				$check_sql = "SELECT slug FROM $sections_table WHERE slug = %s AND sec_id != %d";
-				$slug_check = $wpdb->get_var( $wpdb->prepare( $check_sql, $slug, $secid ) );
-				if ( $slug_check ) {
-					$suffix = 2;
-					do {
-						$alt_slug = $secobj->truncate_slug( $slug, 200 - ( strlen( $suffix ) + 1 ) ) . "-$suffix";
-						$slug_check = $wpdb->get_var( $wpdb->prepare( $check_sql, $alt_slug, $secid ) );
-						$suffix++;
-					} while ( $slug_check );
-					$slug = $alt_slug;
-				}
-				//update slug
-				$wpdb->update( 
-					$sections_table, 
-					array( 
-						'slug' => $slug	
-					), 
-					array( 'sec_id' => $secid ), 
-					array( 
-						'%s'
-					), 
-					array( '%d' ) 
-				);
-				$response['slug'] = apply_filters( 'editable_slug', $slug );*/
 				echo json_encode($response);
 			}	
 			die();
