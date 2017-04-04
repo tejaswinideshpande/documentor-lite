@@ -3,7 +3,7 @@ Contributors: internet techies, tejaswini
 Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc, color options, colored menu, doc, docs, documentation, documents, easy, FAQ, FAQs, knowledge, knowledge base, menu, notes, order, organize, page, plugin, plugins, Post, quoble, simple, text, text document, word, wordpress, WordPress Plugin
 Requires at least: 3.6
-Tested up to: 4.7.2
+Tested up to: 4.7.3
 Stable tag: 1.5
 License: GPLv2 or later
 

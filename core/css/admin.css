@@ -258,7 +258,7 @@ a.create-btn:active, a.create-btn:focus {
 .mdivsett {
 	margin: 10px 0;
 }
-div.content {
+div.content:not(.gopro-text) {
 	background: #fff; /*#f0f0f0;*/
 	margin: 0;
 	padding:10px;

@@ -1992,6 +1992,42 @@ a.box:active {
 .help.is-danger {
   color: #ff3860;
 }
+/*Added by Tejaswini - 04/04/2017*/
+.text.is-white {
+  color: white;
+}
+
+.text.is-black {
+  color: #0a0a0a;
+}
+
+.text.is-light {
+  color: whitesmoke;
+}
+
+.text.is-dark {
+  color: #363636;
+}
+
+.text.is-primary {
+  color: #00d1b2;
+}
+
+.text.is-info {
+  color: #3273dc;
+}
+
+.text.is-success {
+  color: #23d160;
+}
+
+.text.is-warning {
+  color: #ffdd57;
+}
+
+.text.is-danger {
+  color: #ff3860;
+}
 
 @media screen and (max-width: 768px) {
   .control-label {

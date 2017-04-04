@@ -18,7 +18,7 @@ if ( !function_exists( 'add_action' ) ) {
 	exit;
 }
 /**
- * Documentor class
+ * DocumentorLite class
  *
  * @class DocumentorLite - class that holds the entire Documentor Lite plugin
  */
